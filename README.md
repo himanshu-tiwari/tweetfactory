@@ -15,3 +15,5 @@ No frontend or backend framework has been used due to the small size of the proj
 The tweets can be refreshed without reloading the page.
 
 Have fun reading!
+
+![Alt text](assets/screenshots/1.PNG?raw=true "Optional Title")
