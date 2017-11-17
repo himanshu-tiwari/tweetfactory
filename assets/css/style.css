@@ -1,0 +1,39 @@
+@font-face {
+	font-family: 'Waltograph';
+	src: url("../fonts/Waltograph/waltograph42.ttf");
+	src: url("../fonts/Waltograph/waltograph42.otf");
+}
+
+@font-face {
+	font-family: 'latchboy';
+	src: url("../fonts/latchboy/latchboy.ttf");
+}
+
+@font-face {
+	font-family: 'Grinched';
+	src: url("../fonts/Grinched/GrinchedRegular.otf");
+}
+
+.navbar-brand,
+#navbar a,
+.container button {
+	font-family: 'Waltograph', Arial, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: x-large;
+}
+
+p {
+	font-family: 'Grinched', Arial, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: xx-large;	
+}
+
+body {
+	background-color: #0084b4;
+}
+
+.subscript {
+	color: #fff;
+}

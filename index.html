@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	        
+		<title>Tweet Factory | A Tribute to USA</title>
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Custom Scripts -->
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />	
+	</head>
+	
+	<body>
+		<nav class="navbar navbar-default">
+		    <div class="container-fluid">
+		    	<div class="navbar-header">
+		    		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+		      			<span class="sr-only">Toggle Navigation</span>
+		        		<span class="icon-bar"></span>
+		        		<span class="icon-bar"></span>
+		        		<span class="icon-bar"></span>
+		      		</button>
+		      		<a class="navbar-brand" href="index.html">TweetFactory</a>
+		    	</div>
+		    
+		    	<div class="collapse navbar-collapse" id="navbar">
+		    		<ul class="nav navbar-nav navbar-right">
+		            	<li><a href="javascript:tweet();"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> Refresh</a></li>
+		            </ul>
+		    	</div>
+		  	</div>
+		</nav>
+
+		<hr>
+
+		<div class="container">
+			<div id="data" class="row">
+			</div>
+
+			<div class="subscript">
+				<h2 class="pull-right"> -- With love from Donald</h2>
+			</div>
+			
+		  	<button class="btn btn-default" type="button" onclick="tweet()"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> Refresh</button>
+		</div>
+
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="crossorigin="anonymous"></script>
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+		<script>
+			function tweet() {
+				$.ajax({
+					url: 'rest.php',
+					type: 'get',
+					dataType: 'json'
+				}).success(function(data){
+					// console.log(data)
+
+					var id = 1;
+					$.each(data, function(index, element) {
+			            // console.log(element)
+			            $(id).html(element);
+			        });
+				});
+			}
+
+			$.ajax({
+				url: 'rest.php',
+				type: 'get',
+				dataType: 'json'
+			}).success(function(data){
+				console.log(data)
+
+				var id = 1;
+				$.each(data, function(index, element) {
+		            // console.log(element)
+		            $('#data').append('<div class=""> <div class="thumbnail"> <div class="caption"> <h2>Tweet #'+id+'</h2> <hr> <p id='+id+'>'+element+'</p> </div> </div> </div>');
+		            if (id%2==0) {
+		            	$('#data').append('</div><div>');
+		            }
+		            id+=1;
+		        });
+			});
+		</script>
+	</body>
+</html>
