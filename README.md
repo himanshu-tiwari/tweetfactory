@@ -16,4 +16,12 @@ The tweets can be refreshed without reloading the page.
 
 Have fun reading!
 
+A few screenshots:
+
 ![Alt text](assets/screenshots/1.PNG?raw=true "Optional Title")
+
+![Alt text](assets/screenshots/2.PNG?raw=true "Optional Title")
+
+![Alt text](assets/screenshots/3.PNG?raw=true "Optional Title")
+
+![Alt text](assets/screenshots/4.PNG?raw=true "Optional Title")
