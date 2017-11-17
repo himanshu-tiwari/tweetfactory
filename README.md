@@ -8,6 +8,12 @@ $username = "root";
 $password = "";
 $db = "factory";
 
+Along with the following details of your twitter account, in the rest.php file:
+$consumer_key = ""; 
+$consumer_secret = ""; 
+$access_token = ""; 
+$access_token_secret = "";
+
 The project uses twitteroauth library (https://github.com/abraham/twitteroauth) and composer.
 
 No frontend or backend framework has been used due to the small size of the project. The UI/UX can of course be improved.

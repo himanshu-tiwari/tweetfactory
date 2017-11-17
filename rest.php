@@ -5,10 +5,10 @@
 	use Abraham\TwitterOAuth\TwitterOAuth;
 
 	// defining OAuth variables before making connection
-	$consumer_key = "jy9LDSiVoSiIuWItD58iW0CcY"; 
-	$consumer_secret = "CsiGzqAZAHSZdDvfb9PADW1bapGHAtQgVqdsO948E5bDrpZqNY"; 
-	$access_token = "3286571658-FWXErLjqIg1V2YPx4ECGE7YMnIuEDB2x4n1hh80"; 
-	$access_token_secret = "2Imt74aq9Hwok5aRt07z9zrynzRYSoyjRlOG9PfyKBs8g";
+	$consumer_key = ""; 
+	$consumer_secret = ""; 
+	$access_token = ""; 
+	$access_token_secret = "";
 
 	// connecting to twitter
 	$connection = new TwitterOAuth($consumer_key, $consumer_secret, $access_token, $access_token_secret);
