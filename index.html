@@ -38,6 +38,18 @@
 		<hr>
 
 		<div class="container">
+			<div id="search" class="row">
+				<div class="thumbnail">
+					<section>
+						<label for="search-input">
+							<i class="fa fa-search" aria-hidden="true"></i>
+							<span class="sr-only">Search icons</span>
+						</label>
+						<input name="search-input" placeholder="realDonaldTrump" onkeyup="newTweet(this.value)">
+					</section>
+				</div>
+			</div>
+
 			<div id="data" class="row">
 			</div>
 
@@ -59,6 +71,7 @@
 				$.ajax({
 					url: 'rest.php',
 					type: 'get',
+					data: { screen_name: localStorage.getItem("value") },
 					dataType: 'json'
 				}).success(function(data){
 					// console.log(data)
@@ -68,32 +81,56 @@
 			            // console.log(element)
 			            $(id).html(element);
 			        });
+
+			        if (id<10) {
+						$.each(id, function(id) {
+				            // console.log(element)
+				            $(id).html("");
+				        });
+			        };
 				});
 			}
 
-			$.ajax({
-				url: 'rest.php',
-				type: 'get',
-				dataType: 'json'
-			}).success(function(data){
-				console.log(data)
+			function newTweet(value) {
+				localStorage.setItem("value", value);
 
-				var id = 1;
-				$.each(data, function(index, element) {
-		            // console.log(element)
-		            $('#data').append('<div class=""> <div class="thumbnail"> <div class="caption"> <h2>Tweet #'+id+'</h2> <hr> <p id='+id+'>'+element+'</p> </div> </div> </div>');
-		            if (id%2==0) {
-		            	$('#data').append('</div><div>');
-		            }
-		            id+=1;
-		        });
-		        startRefresh();
-			});
+				$("#data").empty();
 
-    	    function startRefresh() {
-			    setTimeout(tweet,10000);
-			    setTimeout(startRefresh,10000);
+				$.ajax({
+					url: 'rest.php',
+					type: 'get',
+					data: { screen_name: value },
+					dataType: 'json'
+				}).success(function(data){
+					console.log(data)
+
+					var id = 1;
+					$.each(data, function(index, element) {
+			            // console.log(element)
+			            $('#data').append('<div class=""> <div class="thumbnail"> <div class="caption"> <h2>Tweet #'+id+'</h2> <hr> <p id='+id+'>'+element+'</p> </div> </div> </div>');
+			            if (id%2==0) {
+			            	$('#data').append('</div><div>');
+			            }
+			            id+=1;
+			        });
+
+				 //    setTimeout(function(value) {
+					//     startRefresh(value);
+					// },5000);
+				});
 			}
+
+   //  	    function startRefresh(value) {
+			//     setTimeout(function(value) {
+			// 	    tweet(value);
+			// 	},5000);
+				
+			//     setTimeout(function(value) {
+			// 	    startRefresh(value);
+			// 	},5000);
+			// }
+
+			newTweet("realDonaldTrump");
 		</script>
 	</body>
 </html>

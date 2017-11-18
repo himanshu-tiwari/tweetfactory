@@ -32,3 +32,19 @@ body {
 .subscript {
 	color: #fff;
 }
+
+#search .thumbnail {
+	background: none;
+	border: none;
+}
+
+#search .thumbnail input {
+	font-family: 'Waltograph', Arial, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: x-large;
+	border-radius: 10px;
+	border-width: 0;
+	text-indent: 10px;
+}
+
