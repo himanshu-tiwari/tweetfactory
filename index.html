@@ -87,7 +87,13 @@
 		            }
 		            id+=1;
 		        });
+		        startRefresh();
 			});
+
+    	    function startRefresh() {
+			    setTimeout(tweet,10000);
+			    setTimeout(startRefresh,10000);
+			}
 		</script>
 	</body>
 </html>
