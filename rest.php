@@ -34,19 +34,20 @@
 
 		// GET request for tweets
 		$statuses = $connection->get("statuses/user_timeline", ["count" => 10, "exclude_replies" => true, "screen_name" => $screenName, "tweet_mode" => "extended"]);
-		// var_dump($statuses[4]);
+		// var_dump($statuses[0]->entities->user_mentions[1]->name);
 
 		// getting db configurations
 		require "env/config.php";
 
 		$sql = "";
 		$id = 1;
-		$array = [];
+		$array['text'] = [];		
 		
 		foreach ($statuses as $status) {
+			// echo $status->entities->user_mentions[1]->name;
 			$text = $status->full_text;
 			
-			array_push($array, $text);
+			array_push($array['text'], $text);
 			// echo $text . "<br>";
 
 			while (strpos($text, "'") || strpos($text, "\"")) {
@@ -59,7 +60,9 @@
 		}
 
 		// echo 'sql: '.$sql;
-
+		// var_dump($array);
+		$array['name'] = [];
+		array_push($array['name'], $statuses = $connection->get("users/show", ["screen_name" => $screenName])->name);
 		echo json_encode($array);
 
 		if ($conn->multi_query($sql) !== TRUE) {

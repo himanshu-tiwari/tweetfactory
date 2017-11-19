@@ -5,7 +5,7 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	        
-		<title>Tweet Factory | A Tribute to USA</title>
+		<title>Tweet Factory | A Tribute to the World</title>
 
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -47,8 +47,7 @@
 			<div id="data" class="row">
 			</div>
 
-			<div class="subscript">
-				<h2 class="pull-right"> -- With love from Donald</h2>
+			<div class="subscript" id="subscript">
 			</div>
 			
 		  	<button class="btn btn-default" type="button" onclick="tweet()"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> Refresh</button>
@@ -71,7 +70,7 @@
 					// console.log(data)
 
 					var id = 1;
-					$.each(data, function(index, element) {
+					$.each(data['text'], function(index, element) {
 			            // console.log(element)
 			            $(id).html(element);
 			        });
@@ -89,6 +88,7 @@
 				localStorage.setItem("value", value);
 
 				$("#data").empty();
+				$("#subscript").empty();
 
 				$.ajax({
 					url: 'rest.php',
@@ -96,10 +96,10 @@
 					data: { screen_name: value },
 					dataType: 'json'
 				}).success(function(data){
-					console.log(data)
+					console.log(data['text'])
 
 					var id = 1;
-					$.each(data, function(index, element) {
+					$.each(data['text'], function(index, element) {
 			            // console.log(element)
 			            $('#data').append('<div class=""> <div class="thumbnail"> <div class="caption"> <h2>Tweet #'+id+'</h2> <hr> <p id='+id+'>'+element+'</p> </div> </div> </div>');
 			            if (id%2==0) {
@@ -107,6 +107,8 @@
 			            }
 			            id+=1;
 			        });
+
+			        $('#subscript').append('<h2 class="pull-right"> -- With love from '+data['name']+'</h2>');
 
 				 //    setTimeout(function(value) {
 					//     startRefresh(value);
