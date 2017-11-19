@@ -18,21 +18,21 @@
 	</head>
 	
 	<body>
-		<nav class="navbar navbar-default navbar-fixed-top">
+		<nav class="navbar navbar-default navbar-fixed-top scrolled">
 		    <div class="container-fluid">
 		    	<div class="navbar-header">
 		    		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
 		      			<span class="sr-only">Toggle Navigation</span>
-		        		<span class="icon-bar"></span>
-		        		<span class="icon-bar"></span>
-		        		<span class="icon-bar"></span>
+		        		<span class="icon-bar scrolled-bar"></span>
+		        		<span class="icon-bar scrolled-bar"></span>
+		        		<span class="icon-bar scrolled-bar"></span>
 		      		</button>
-		      		<a class="navbar-brand" href="index.html">TweetFactory</a>
+		      		<a class="navbar-brand scrolled" href="index.html">TweetFactory</a>
 		    	</div>
 		    
 		    	<div class="collapse navbar-collapse" id="navbar">
 		    		<ul class="nav navbar-nav navbar-right">
-		            	<li><a class="right-part" href="javascript:tweet();"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> Refresh</a></li>
+		            	<li><a class="right-part scrolled" href="javascript:tweet();"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> Refresh</a></li>
 		            </ul>
 		    	</div>
 		  	</div>
@@ -65,10 +65,10 @@
 
 		<script>
 			$(document).scroll(function () {
-				$(".icon-bar").toggleClass('scrolled-bar', $(document).scrollTop() > $(".navbar").height());
-				$(".navbar-fixed-top").toggleClass('scrolled', $(document).scrollTop() > $(".navbar").height());
-				$(".navbar-brand").toggleClass('scrolled', $(document).scrollTop() > $(".navbar").height());
-				$(".right-part").toggleClass('scrolled', $(document).scrollTop() > $(".navbar").height());
+				$(".icon-bar").toggleClass('scrolled-bar', $(document).scrollTop() < $(".navbar").height());
+				$(".navbar").toggleClass('scrolled', $(document).scrollTop() < $(".navbar").height());
+				$(".navbar-brand").toggleClass('scrolled', $(document).scrollTop() < $(".navbar").height());
+				$(".right-part").toggleClass('scrolled', $(document).scrollTop() < $(".navbar").height());
 			});
 
 			function tweet() {

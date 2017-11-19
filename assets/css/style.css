@@ -38,6 +38,15 @@ body {
 	background-color: #0084b4;
 }
 
+.navbar-brand,
+.right-part {
+	color: #000 !important;
+}
+
+.icon-bar {
+	background-color: #000 !important;
+}
+
 .scrolled {
 	color: #fff !important;
 	background-color: #0084b4;
@@ -47,6 +56,11 @@ body {
 .scrolled-bar {
 	background-color: #fff !important;
 	transition: background-color 200ms linear;
+}
+
+h2,
+p {
+	color: #000;
 }
 
 #search .thumbnail {
@@ -78,7 +92,7 @@ body {
     color: #0084b4;
 }
 
-.subscript {
-	color: #fff;
+.subscript h2 {
+	color: #fff !important;
 }
 
