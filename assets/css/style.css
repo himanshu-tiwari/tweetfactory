@@ -1,12 +1,21 @@
 @font-face {
 	font-family: 'Waltograph';
 	src: url("../fonts/Waltograph/waltograph42.ttf");
-	src: url("../fonts/Waltograph/waltograph42.otf");
+	src: 
+	url("../fonts/Waltograph/waltograph42.otf"),
+	url("../fonts/Waltograph/waltograph42.eot"),
+	url("../fonts/Waltograph/waltograph42.svg"),
+	url("../fonts/Waltograph/waltograph42.woff");
 }
 
 @font-face {
-	font-family: 'Grinched';
-	src: url("../fonts/Grinched/GrinchedRegular.otf");
+	font-family: 'Schoolbell';
+	src: url("../fonts/Schoolbell/Schoolbell.ttf");
+	src: 
+	url("../fonts/Schoolbell/Schoolbell.otf"),
+	url("../fonts/Schoolbell/Schoolbell.eot"),
+	url("../fonts/Schoolbell/Schoolbell.svg"),
+	url("../fonts/Schoolbell/Schoolbell.woff");
 }
 
 .navbar-brand,
@@ -19,7 +28,7 @@
 }
 
 p {
-	font-family: 'Grinched', Arial, sans-serif;
+	font-family: 'Schoolbell', Arial, sans-serif;
 	font-weight: normal;
 	font-style: normal;
 	font-size: xx-large;	
