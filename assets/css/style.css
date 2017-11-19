@@ -57,3 +57,17 @@ body {
 	text-indent: 20px;
 }
 
+.thumbnail span {
+    border: 0;
+    background: none;
+    padding: 2px 5px;
+    margin-top: 2px;
+    position: relative;
+    left: -28px;
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #0084b4;
+}
+

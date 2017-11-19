@@ -25,10 +25,10 @@ Have fun reading!
 
 A few screenshots:
 
-![Alt text](assets/screenshots/1.PNG?raw=true "Optional Title")
+![Alt text](assets/images/screenshots/1.PNG?raw=true "Optional Title")
 
-![Alt text](assets/screenshots/2.PNG?raw=true "Optional Title")
+![Alt text](assets/images/screenshots/2.PNG?raw=true "Optional Title")
 
-![Alt text](assets/screenshots/3.PNG?raw=true "Optional Title")
+![Alt text](assets/images/screenshots/3.PNG?raw=true "Optional Title")
 
-![Alt text](assets/screenshots/4.PNG?raw=true "Optional Title")
+![Alt text](assets/images/screenshots/4.PNG?raw=true "Optional Title")

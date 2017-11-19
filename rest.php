@@ -6,10 +6,10 @@
 	use Respect\Validation\Validator as v;
 
 	// defining OAuth variables before making connection
-	$consumer_key = ""; 
-	$consumer_secret = ""; 
-	$access_token = ""; 
-	$access_token_secret = "";
+	$consumer_key = "CJ66vrGb2w8ujtn6Fu9WFJPIb"; 
+	$consumer_secret = "8fQe7qTb24EJkNR1t6bcA4ucynaQQLT76ISNG1yeJ7i10qEGGW"; 
+	$access_token = "3286571658-FWXErLjqIg1V2YPx4ECGE7YMnIuEDB2x4n1hh80"; 
+	$access_token_secret = "2Imt74aq9Hwok5aRt07z9zrynzRYSoyjRlOG9PfyKBs8g";
 	
 	// connecting to twitter
 	$connection = new TwitterOAuth($consumer_key, $consumer_secret, $access_token, $access_token_secret);

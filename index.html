@@ -7,6 +7,9 @@
 	        
 		<title>Tweet Factory | A Tribute to the World</title>
 
+	    <!--Favicon-->
+	    <link rel="shortcut icon" href="assets/images/twitter-logo-final.png" type="image/x-icon">
+
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -41,6 +44,7 @@
 			<div id="search" class="row">
 				<div class="thumbnail">
 					<input name="search-input" placeholder="realDonaldTrump" onkeyup="newTweet(this.value)">
+					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 				</div>
 			</div>
 
@@ -72,7 +76,7 @@
 					var id = 1;
 					$.each(data['text'], function(index, element) {
 			            // console.log(element)
-			            $(id).html(element);
+			            $(id).html('\"'+element+'\"');
 			        });
 
 			        if (id<10) {
@@ -101,7 +105,7 @@
 					var id = 1;
 					$.each(data['text'], function(index, element) {
 			            // console.log(element)
-			            $('#data').append('<div class=""> <div class="thumbnail"> <div class="caption"> <h2>Tweet #'+id+'</h2> <hr> <p id='+id+'>'+element+'</p> </div> </div> </div>');
+			            $('#data').append('<div class=""> <div class="thumbnail"> <div class="caption"> <h2>Tweet #'+id+'</h2> <hr> <p id='+id+'>\"'+element+'\"</p> </div> </div> </div>');
 			            if (id%2==0) {
 			            	$('#data').append('</div><div>');
 			            }
@@ -115,16 +119,6 @@
 					// },5000);
 				});
 			}
-
-   //  	    function startRefresh(value) {
-			//     setTimeout(function(value) {
-			// 	    tweet(value);
-			// 	},5000);
-				
-			//     setTimeout(function(value) {
-			// 	    startRefresh(value);
-			// 	},5000);
-			// }
 
 			newTweet("realDonaldTrump");
 		</script>
